@@ -1,6 +1,5 @@
 package com.github.connector;
 
-import com.github.connector.model.CommitInfo;
 import com.github.connector.model.RepositoryInfo;
 import com.github.connector.service.GitHubService;
 import okhttp3.mockwebserver.MockResponse;
@@ -15,7 +14,6 @@ import reactor.test.StepVerifier;
 
 import java.io.IOException;
 import java.time.Instant;
-import java.util.Collections;
 
 class GitHubServiceTest {
 

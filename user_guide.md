@@ -2,6 +2,26 @@
 
 This guide provides an example of how a user can interact with the GitHub Repository Activity Connector API.
 
+## Running the System with Docker
+
+You can use Docker to build and run the application without installing Java or Maven locally.
+
+1. **Build the Docker image:**
+
+   ```bash
+   docker build -t github-connector .
+   ```
+
+2. **Run the Docker container:**
+
+   Provide your GitHub token as an environment variable:
+
+   ```bash
+   docker run -e GITHUB_TOKEN=$GITHUB_TOKEN -p 8080:8080 github-connector
+   ```
+
+   The API will be available at `http://localhost:8080`.
+
 ## Fetching Repositories
 
 To fetch the repositories for a GitHub user, you can use the following `curl` command:
@@ -52,23 +72,3 @@ If an error occurs, the API will return an appropriate HTTP status code and a de
 *   **404 Not Found:** If the user does not exist.
 *   **403 Forbidden:** If the GitHub API rate limit is exceeded.
 *   **500 Internal Server Error:** For any other server-side errors.
-
-## Running the System with Docker
-
-You can use Docker to build and run the application without installing Java or Maven locally.
-
-1. **Build the Docker image:**
-
-   ```bash
-   docker build -t github-connector .
-   ```
-
-2. **Run the Docker container:**
-
-   Provide your GitHub token as an environment variable:
-
-   ```bash
-   docker run -e GITHUB_TOKEN=ghp_your_token_here -p 8080:8080 github-connector
-   ```
-
-   The API will be available at `http://localhost:8080`.
