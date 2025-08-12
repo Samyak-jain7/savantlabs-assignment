@@ -64,7 +64,7 @@ You can also run this application using Docker:
    You need to provide your GitHub token as an environment variable:
 
    ```bash
-   docker run -e GITHUB_TOKEN=ghp_your_token_here -p 8080:8080 github-connector
+   docker run -e GITHUB_TOKEN=$GITHUB_TOKEN -p 8080:8080 github-connector
    ```
 
    The application will be available at `http://localhost:8080`.
